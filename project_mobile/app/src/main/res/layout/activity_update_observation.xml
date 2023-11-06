@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.observation.UpdateObservationActivity">
+    <include
+        android:id="@+id/include2"
+        layout="@layout/actionbar_observation" />
+
+    <TextView
+        android:id="@+id/title_name_ob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/crete_round"
+        android:text="Observation"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <EditText
+        android:id="@+id/name_obs_update"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/text_color"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:fontFamily="@font/crete_round"
+        android:hint="Name observation"
+        android:background="@drawable/background_input"
+        app:layout_constraintTop_toBottomOf="@+id/title_name_ob" />
+
+    <TextView
+        android:id="@+id/title_date_ob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/crete_round"
+        android:text="Time of observation"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_obs_update" />
+
+    <Button
+        android:id="@+id/datePickerButton"
+        style="?android:spinnerStyle"
+        android:inputType="datetime"
+        android:onClick="openTimePiker"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/crete_round"
+        android:layout_marginEnd="30dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:hint="Date and Time..."
+        android:background="@drawable/background_input"
+        app:layout_constraintTop_toBottomOf="@+id/title_date_ob" />
+
+    <TextView
+        android:id="@+id/title_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/crete_round"
+        android:text="Comments"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
+
+    <EditText
+        android:id="@+id/comments_obs_update"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/crete_round"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/background_input"
+        app:layout_constraintTop_toBottomOf="@+id/title_des" />
+    <Button
+        android:id="@+id/update_obs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/background_input"
+        android:fontFamily="@font/crete_round"
+        android:text="Update"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comments_obs_update" />
+</androidx.constraintlayout.widget.ConstraintLayout>
