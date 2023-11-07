@@ -57,11 +57,11 @@ public class UpdateObservationActivity extends AppCompatActivity {
     private void updateObservation(){
         MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateObservationActivity.this);
         Observation observation = new Observation();
-        observation.setHike_id(Integer.valueOf(hike_id));
-        observation.setObs_id(Integer.valueOf((String) getIntent().getSerializableExtra("obs_id")));
-        observation.setObs_name(name_obs.getText().toString().trim());
-        observation.setObs_time(time_obs.getText().toString().trim());
-        observation.setObs_comment(comments_obs.getText().toString().trim());
+        observation.setHikeId(Integer.valueOf(hike_id));
+        observation.setObsId(Integer.valueOf((String) getIntent().getSerializableExtra("obs_id")));
+        observation.setObsName(name_obs.getText().toString().trim());
+        observation.setObsTime(time_obs.getText().toString().trim());
+        observation.setObsComment(comments_obs.getText().toString().trim());
         myDB.updateObservation(observation);
     }
 

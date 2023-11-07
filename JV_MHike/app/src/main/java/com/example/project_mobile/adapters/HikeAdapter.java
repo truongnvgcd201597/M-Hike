@@ -34,7 +34,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
     private Activity activity;
     private List<Hike> hikes;
     private List<Hike> hikesFind;
-    private Animation translate_anim;
 
     public HikeAdapter(Activity activity, Context context, List<Hike> hikes){
         this.activity = activity;
@@ -53,29 +52,29 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull HikeAdapter.MyViewHolder holder, int position) {
         Hike hike = hikes.get(position);
-        holder.name_hike_txt.setText(String.valueOf(hike.getHike_name()));
-        holder.date_hike_txt.setText(String.valueOf(hike.getDate_hike()));
+        holder.name_hike_txt.setText(String.valueOf(hike.getHikeName()));
+        holder.date_hike_txt.setText(String.valueOf(hike.getDateHike()));
 
         holder.img_edit.setOnClickListener(v -> {
             Intent intent = new Intent(context, UpdateHikeActivity.class);
-            intent.putExtra("hike_id", String.valueOf(hike.getHike_id()));
-            intent.putExtra("hike_name", String.valueOf(hike.getHike_name()));
-            intent.putExtra("hike_location", String.valueOf(hike.getLocation_hike()));
-            intent.putExtra("hike_date", String.valueOf(hike.getDate_hike()));
-            intent.putExtra("parking_available", String.valueOf(hike.getParking_available()));
-            intent.putExtra("length_hike", String.valueOf(hike.getHike_length()));
-            intent.putExtra("level_hike", String.valueOf(hike.getHike_level()));
-            intent.putExtra("des_hike", String.valueOf(hike.getHike_description()));
+            intent.putExtra("hike_id", String.valueOf(hike.getHikeId()));
+            intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
+            intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
+            intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));
+            intent.putExtra("parking_available", String.valueOf(hike.getParkingAvailable()));
+            intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
+            intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
+            intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
             activity.startActivityForResult(intent,1);
         });
         holder.img_remove.setOnClickListener(v -> {
-            holder.alertDialog.setTitle("Delete " + String.valueOf(hike.getHike_name()))
-                    .setMessage("Are you sure you want to delete item "+ String.valueOf(hike.getHike_name()))
+            holder.alertDialog.setTitle("Delete " + String.valueOf(hike.getHikeName()))
+                    .setMessage("Are you sure you want to delete item "+ String.valueOf(hike.getHikeName()))
                     .setCancelable(true)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            deleteHike(hike.getHike_id());
+                            deleteHike((int) hike.getHikeId());
                             activity.startActivityForResult(new Intent(context, MainActivity.class),1);
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -88,14 +87,14 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
 
         holder.mainLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailHikeActivity.class);
-            intent.putExtra("hike_id", String.valueOf(hike.getHike_id()));
-            intent.putExtra("hike_name", String.valueOf(hike.getHike_name()));
-            intent.putExtra("hike_location", String.valueOf(hike.getLocation_hike()));
-            intent.putExtra("hike_date", String.valueOf(hike.getDate_hike()));
-            intent.putExtra("parking_available", String.valueOf(hike.getParking_available()));
-            intent.putExtra("length_hike", String.valueOf(hike.getHike_length()));
-            intent.putExtra("level_hike", String.valueOf(hike.getHike_level()));
-            intent.putExtra("des_hike", String.valueOf(hike.getHike_description()));
+            intent.putExtra("hike_id", String.valueOf(hike.getHikeId()));
+            intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
+            intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
+            intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));
+            intent.putExtra("parking_available", String.valueOf(hike.getParkingAvailable()));
+            intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
+            intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
+            intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
             activity.startActivityForResult(intent,1);
         });
     }
@@ -120,7 +119,7 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
                 }else {
                     List<Hike> list = new ArrayList<>();
                     for(Hike hike:hikesFind){
-                        if(hike.getHike_name().toLowerCase().contains(strSearch.toLowerCase())){
+                        if(hike.getHikeName().toLowerCase().contains(strSearch.toLowerCase())){
                             list.add(hike);
                         }
                     }
@@ -153,8 +152,6 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
             alertDialog = new AlertDialog.Builder(context);
 
             mainLayout = itemView.findViewById(R.id.mainLayout);
-            translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
-            mainLayout.setAnimation(translate_anim);
         }
     }
 }

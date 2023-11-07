@@ -109,10 +109,10 @@ public class AddObservationActivity extends AppCompatActivity {
     private void addNewObservation(){
         MyDatabaseHelper myDB = new MyDatabaseHelper(AddObservationActivity.this);
         Observation observation = new Observation();
-        observation.setObs_name(name_obs.getText().toString().trim());
-        observation.setObs_comment(comments.getText().toString().trim());
-        observation.setHike_id(Integer.valueOf(hikeID));
-        observation.setObs_time(date_time_btn.getText().toString().trim());
+        observation.setObsName(name_obs.getText().toString().trim());
+        observation.setObsComment(comments.getText().toString().trim());
+        observation.setHikeId(Integer.valueOf(hikeID));
+        observation.setObsTime(date_time_btn.getText().toString().trim());
         myDB.addNewObservation(observation);
     }
 

@@ -1,13 +1,13 @@
 package com.example.project_mobile.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.project_mobile.R;
 import com.example.project_mobile.activities.observation.ObservationActivity;
@@ -58,15 +58,14 @@ public class DetailHikeActivity extends AppCompatActivity {
         des_hike_detail = findViewById(R.id.des_hike_detail);
     }
 
-    private void setListener(){
+    private void setListener() {
         Intent intent = new Intent(DetailHikeActivity.this, MainActivity.class);
-        back_txt.setOnClickListener(v -> {
-            startActivity(intent);
-        });
-        back_ic.setOnClickListener(v -> {
-            startActivity(intent);
-        });
+
+        View.OnClickListener backClickListener = v -> startActivity(intent);
+        back_txt.setOnClickListener(backClickListener);
+        back_ic.setOnClickListener(backClickListener);
     }
+
 
     public void getAndSetIntentData() throws ParseException {
         if (getIntent().hasExtra("hike_name") &&

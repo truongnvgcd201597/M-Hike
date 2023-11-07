@@ -24,7 +24,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_HIKE + "(hike_id INTEGER primary key autoincrement, " +
-                "hike_name TEXT NOT NULL, " +
+                "Hike_Name TEXT NOT NULL, " +
                 "hike_location TEXT NOT NULL, " +
                 "date_hike TEXT NOT NULL, " +
                 "parking_available TEXT NOT NULL, " +
@@ -49,13 +49,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void addNewHike(Hike hike){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("hike_name", hike.getHike_name());
-        cv.put("hike_location", hike.getLocation_hike());
-        cv.put("date_hike",hike.getDate_hike());
-        cv.put("parking_available",hike.getParking_available());
-        cv.put("hike_length",hike.getHike_length());
-        cv.put("hike_level",hike.getHike_level());
-        cv.put("hike_description",hike.getHike_description());
+        cv.put("Hike_Name", hike.getHikeName());
+        cv.put("hike_location", hike.getLocationHike());
+        cv.put("date_hike",hike.getDateHike());
+        cv.put("parking_available",hike.getParkingAvailable());
+        cv.put("hike_length",hike.getHikeLength());
+        cv.put("hike_level",hike.getHikeLevel());
+        cv.put("hike_description",hike.getHikeDescription());
         long result = db.insert(TABLE_HIKE,null,cv);
         if(result == -1){
             Toast.makeText(context, "Failed to Add", Toast.LENGTH_SHORT).show();
@@ -65,7 +65,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor readAllHikes(){
-        String query ="SELECT hike_id, hike_name, hike_location, date_hike, parking_available, hike_length, hike_level, hike_description FROM "+ TABLE_HIKE;
+        String query ="SELECT hike_id, Hike_Name, hike_location, date_hike, parking_available, hike_length, hike_level, hike_description FROM "+ TABLE_HIKE;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = null;
         if(db != null){
@@ -77,14 +77,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void updateHike(Hike hike){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("hike_name", hike.getHike_name());
-        cv.put("hike_location", hike.getLocation_hike());
-        cv.put("date_hike",hike.getDate_hike());
-        cv.put("parking_available",hike.getParking_available());
-        cv.put("hike_length",hike.getHike_length());
-        cv.put("hike_level",hike.getHike_level());
-        cv.put("hike_description",hike.getHike_description());
-        long result = db.update(TABLE_HIKE, cv, "hike_id=?",new String[]{String.valueOf(hike.getHike_id())});
+        cv.put("Hike_Name", hike.getHikeName());
+        cv.put("hike_location", hike.getLocationHike());
+        cv.put("date_hike",hike.getDateHike());
+        cv.put("parking_available",hike.getParkingAvailable());
+        cv.put("hike_length",hike.getHikeLength());
+        cv.put("hike_level",hike.getHikeLevel());
+        cv.put("hike_description",hike.getHikeDescription());
+        long result = db.update(TABLE_HIKE, cv, "hike_id=?",new String[]{String.valueOf(hike.getHikeId())});
         if(result == -1){
             Toast.makeText(context, "Failed to Update.", Toast.LENGTH_SHORT).show();
         }else {
@@ -115,10 +115,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void addNewObservation(Observation observation){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("observation_name", observation.getObs_name());
-        cv.put("date_time", observation.getObs_time());
-        cv.put("comments",observation.getObs_comment());
-        cv.put("hike_id",observation.getHike_id());
+        cv.put("observation_name", observation.getObsName());
+        cv.put("date_time", observation.getObsTime());
+        cv.put("comments",observation.getObsComment());
+        cv.put("hike_id",observation.getHikeId());
         long result = db.insert(TABLE_OBSERVATION,null,cv);
         if(result == -1){
             Toast.makeText(context, "Failed to Add", Toast.LENGTH_SHORT).show();
@@ -140,10 +140,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void updateObservation(Observation observation){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("observation_name", observation.getObs_name());
-        cv.put("date_time", observation.getObs_time());
-        cv.put("comments",observation.getObs_comment());
-        long result = db.update(TABLE_OBSERVATION, cv, "hike_id=? and observation_id=?",new String[]{String.valueOf(observation.getHike_id()), String.valueOf(observation.getObs_id())});
+        cv.put("observation_name", observation.getObsName());
+        cv.put("date_time", observation.getObsTime());
+        cv.put("comments",observation.getObsComment());
+        long result = db.update(TABLE_OBSERVATION, cv, "hike_id=? and observation_id=?",new String[]{String.valueOf(observation.getHikeId()), String.valueOf(observation.getHikeId())});
         if(result == -1){
             Toast.makeText(context, "Failed to Update.", Toast.LENGTH_SHORT).show();
         }else {

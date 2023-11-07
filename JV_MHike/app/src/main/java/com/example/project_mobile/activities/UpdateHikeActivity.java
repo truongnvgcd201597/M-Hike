@@ -55,14 +55,14 @@ public class UpdateHikeActivity extends AppCompatActivity {
         Hike hike = new Hike();
         int requireGroup = radioGroup.getCheckedRadioButtonId();
         RadioButton radioGroup = findViewById(requireGroup);
-        hike.setHike_id(Integer.parseInt(getIntent().getStringExtra("hike_id")));
-        hike.setHike_name(name_hike.getText().toString().trim());
-        hike.setLocation_hike(location_hike.getText().toString().trim());
-        hike.setParking_available(radioGroup.getText().toString().trim());
-        hike.setDate_hike(dateButton.getText().toString().trim());
-        hike.setHike_length(length_hike.getText().toString().trim());
-        hike.setHike_level(spinner_level.getSelectedItem().toString().trim());
-        hike.setHike_description(des_hike.getText().toString().trim());
+        hike.setHikeId(Integer.parseInt(getIntent().getStringExtra("hike_id")));
+        hike.setHikeName(name_hike.getText().toString().trim());
+        hike.setHikeLocation(location_hike.getText().toString().trim());
+        hike.setParkingAvailable(radioGroup.getText().toString().trim());
+        hike.setDateHike(dateButton.getText().toString().trim());
+        hike.setHikeLength(length_hike.getText().toString().trim());
+        hike.setHikeLevel(spinner_level.getSelectedItem().toString().trim());
+        hike.setHikeDescription(des_hike.getText().toString().trim());
         myDB.updateHike(hike);
     }
 

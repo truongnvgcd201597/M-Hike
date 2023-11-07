@@ -36,6 +36,13 @@ public class AddHikeActivity extends AppCompatActivity {
     private RadioButton radio_yes, radio_no;
     private AlertDialog.Builder alertDialog;
 
+    private static final String NAME_HINT = "Enter name of hike";
+    private static final String LOCATION_HINT = "Enter location of hike";
+    private static final String PARKING_HINT = "Please tick parking available";
+    private static final String LENGTH_HINT = "Enter length of hike";
+    private static final String DESCRIPTION_HINT = "Enter description of hike";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +65,6 @@ public class AddHikeActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.add_item);
-        dateButton = findViewById(R.id.datePickerButton);
         dateButton = findViewById(R.id.datePickerButton);
         dateButton.setText(getDate());
 
@@ -114,17 +120,17 @@ public class AddHikeActivity extends AppCompatActivity {
     }
 
     private void addNewHike(){
-        MyDatabaseHelper myDB = new MyDatabaseHelper(AddHikeActivity    .this);
+        MyDatabaseHelper myDB = new MyDatabaseHelper(AddHikeActivity.this);
         Hike hike = new Hike();
         int requireGroup = radioGroup.getCheckedRadioButtonId();
         RadioButton radioGroup = findViewById(requireGroup);
-        hike.setHike_name(name_hike.getText().toString().trim());
-        hike.setLocation_hike(location_hike.getText().toString().trim());
-        hike.setParking_available(radioGroup.getText().toString().trim());
-        hike.setDate_hike(dateButton.getText().toString().trim());
-        hike.setHike_length(length_hike.getText().toString().trim());
-        hike.setHike_level(spinner_level.getSelectedItem().toString().trim());
-        hike.setHike_description(des_hike.getText().toString().trim());
+        hike.setHikeName(name_hike.getText().toString().trim());
+        hike.setHikeLocation(location_hike.getText().toString().trim());
+        hike.setParkingAvailable(radioGroup.getText().toString().trim());
+        hike.setDateHike(dateButton.getText().toString().trim());
+        hike.setHikeLength(length_hike.getText().toString().trim());
+        hike.setHikeLevel(spinner_level.getSelectedItem().toString().trim());
+        hike.setHikeDescription(des_hike.getText().toString().trim());
         myDB.addNewHike(hike);
     }
 
@@ -158,11 +164,11 @@ public class AddHikeActivity extends AppCompatActivity {
     }
 
     private String getDate() {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
         month = month + 1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
         return dateToString(day,month,year);
     }
 
@@ -172,22 +178,22 @@ public class AddHikeActivity extends AppCompatActivity {
 
     private Boolean isValidAddHikeDetails(){
         if(name_hike.getText().toString().trim().isEmpty()){
-            showToast("Enter name of hike");
+            showToast(NAME_HINT);
             return false;
         }else if(location_hike.getText().toString().trim().isEmpty()){
-            showToast("Enter location of hike");
+            showToast(LOCATION_HINT);
             return false;
         }
         else if(radioGroup.getCheckedRadioButtonId() == -1){
-            showToast("Please tick parking available");
+            showToast(PARKING_HINT);
             return false;
         }
         else if(length_hike.getText().toString().trim().isEmpty()){
-            showToast("Enter length of hike");
+            showToast(LENGTH_HINT);
             return false;
         }
         else if(des_hike.getText().toString().trim().isEmpty()){
-            showToast("Enter description of hike");
+            showToast(DESCRIPTION_HINT);
             return false;
         }
         return true;

@@ -56,43 +56,43 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
     @Override
     public void onBindViewHolder(@NonNull ObservationAdapter.MyViewHolder holder, int position) {
         Observation observation = observations.get(position);
-        holder.name_obs_txt.setText(String.valueOf(observation.getObs_name()));
-        holder.date_obs_txt.setText(String.valueOf(observation.getObs_time()));
+        holder.name_obs_txt.setText(String.valueOf(observation.getObsName()));
+        holder.date_obs_txt.setText(String.valueOf(observation.getObsTime()));
 
         holder.img_edit.setOnClickListener(v -> {
             Intent intent = new Intent(context, UpdateObservationActivity.class);
-            intent.putExtra("hike_name", String.valueOf(hike.getHike_name()));
-            intent.putExtra("hike_location", String.valueOf(hike.getLocation_hike()));
-            intent.putExtra("hike_date", String.valueOf(hike.getDate_hike()));
-            intent.putExtra("parking_available", String.valueOf(hike.getParking_available()));
-            intent.putExtra("length_hike", String.valueOf(hike.getHike_length()));
-            intent.putExtra("level_hike", String.valueOf(hike.getHike_level()));
-            intent.putExtra("des_hike", String.valueOf(hike.getHike_description()));
+            intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
+            intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
+            intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));
+            intent.putExtra("parking_available", String.valueOf(hike.getParkingAvailable()));
+            intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
+            intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
+            intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
 
-            intent.putExtra("hike_id", String.valueOf(observation.getHike_id()));
-            intent.putExtra("obs_name", String.valueOf(observation.getObs_name()));
-            intent.putExtra("obs_time", String.valueOf(observation.getObs_time()));
-            intent.putExtra("obs_comment", String.valueOf(observation.getObs_comment()));
-            intent.putExtra("obs_id", String.valueOf(observation.getObs_id()));
+            intent.putExtra("hike_id", String.valueOf(observation.getHikeId()));
+            intent.putExtra("obs_name", String.valueOf(observation.getObsName()));
+            intent.putExtra("obs_time", String.valueOf(observation.getObsTime()));
+            intent.putExtra("obs_comment", String.valueOf(observation.getObsComment()));
+            intent.putExtra("obs_id", String.valueOf(observation.getObsId()));
             activity.startActivityForResult(intent,1);
         });
         holder.img_remove.setOnClickListener(v -> {
-            holder.alertDialog.setTitle("Delete " + String.valueOf(observation.getObs_name()))
-                    .setMessage("Are you sure you want to delete item "+ String.valueOf(observation.getObs_name())+ " ?")
+            holder.alertDialog.setTitle("Delete " + String.valueOf(observation.getObsName()))
+                    .setMessage("Are you sure you want to delete item "+ String.valueOf(observation.getObsName())+ " ?")
                     .setCancelable(true)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent intent = new Intent(context, ObservationActivity.class);
-                            intent.putExtra("hike_id", String.valueOf(observation.getHike_id()));
-                            intent.putExtra("hike_name", String.valueOf(hike.getHike_name()));
-                            intent.putExtra("hike_location", String.valueOf(hike.getLocation_hike()));
-                            intent.putExtra("hike_date", String.valueOf(hike.getDate_hike()));
-                            intent.putExtra("parking_available", String.valueOf(hike.getParking_available()));
-                            intent.putExtra("length_hike", String.valueOf(hike.getHike_length()));
-                            intent.putExtra("level_hike", String.valueOf(hike.getHike_level()));
-                            intent.putExtra("des_hike", String.valueOf(hike.getHike_description()));
-                            deleteObservation(observation.getHike_id());
+                            intent.putExtra("hike_id", String.valueOf(observation.getHikeId()));
+                            intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
+                            intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
+                            intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));
+                            intent.putExtra("parking_available", String.valueOf(hike.getParkingAvailable()));
+                            intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
+                            intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
+                            intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
+                            deleteObservation((int) observation.getHikeId());
                             activity.startActivityForResult(intent,1);
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -105,19 +105,19 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
 
         holder.mainLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, ObservationDetailActivity.class);
-            intent.putExtra("hike_name", String.valueOf(hike.getHike_name()));
-            intent.putExtra("hike_location", String.valueOf(hike.getLocation_hike()));
-            intent.putExtra("hike_date", String.valueOf(hike.getDate_hike()));
-            intent.putExtra("parking_available", String.valueOf(hike.getParking_available()));
-            intent.putExtra("length_hike", String.valueOf(hike.getHike_length()));
-            intent.putExtra("level_hike", String.valueOf(hike.getHike_level()));
-            intent.putExtra("des_hike", String.valueOf(hike.getHike_description()));
+            intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
+            intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
+            intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));
+            intent.putExtra("parking_available", String.valueOf(hike.getParkingAvailable()));
+            intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
+            intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
+            intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
 
-            intent.putExtra("hike_id", String.valueOf(observation.getHike_id()));
-            intent.putExtra("obs_name", String.valueOf(observation.getObs_name()));
-            intent.putExtra("obs_time", String.valueOf(observation.getObs_time()));
-            intent.putExtra("obs_comment", String.valueOf(observation.getObs_comment()));
-            intent.putExtra("obs_id", String.valueOf(observation.getObs_id()));
+            intent.putExtra("hike_id", String.valueOf(observation.getHikeId()));
+            intent.putExtra("obs_name", String.valueOf(observation.getObsName()));
+            intent.putExtra("obs_time", String.valueOf(observation.getObsTime()));
+            intent.putExtra("obs_comment", String.valueOf(observation.getObsComment()));
+            intent.putExtra("obs_id", String.valueOf(observation.getObsId()));
             activity.startActivityForResult(intent,1);
         });
     }
@@ -142,7 +142,7 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
                 }else {
                     List<Observation> list = new ArrayList<>();
                     for(Observation observation :observationsFind){
-                        if(observation.getObs_name().toLowerCase().contains(strSearch.toLowerCase())){
+                        if(observation.getObsName().toLowerCase().contains(strSearch.toLowerCase())){
                             list.add(observation);
                         }
                     }
@@ -175,8 +175,6 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
             alertDialog = new AlertDialog.Builder(context);
 
             mainLayout = itemView.findViewById(R.id.mainLayout);
-            translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
-            mainLayout.setAnimation(translate_anim);
         }
     }
 }
