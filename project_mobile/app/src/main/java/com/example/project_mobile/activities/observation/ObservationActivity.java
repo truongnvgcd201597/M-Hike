@@ -56,7 +56,7 @@ public class ObservationActivity extends AppCompatActivity {
     }
 
     private void setInit(){
-        back_ic = findViewById(R.id.back_ic_obs);
+        back_ic = findViewById(R.id.back_icon_button);
         recyclerView = findViewById(R.id.recyclerView);
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.home_page);

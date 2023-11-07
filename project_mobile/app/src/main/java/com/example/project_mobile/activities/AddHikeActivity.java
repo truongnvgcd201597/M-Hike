@@ -156,7 +156,7 @@ public class AddHikeActivity extends AppCompatActivity {
     private String dateToString(int day, int month, int year) {
         return String.format("%02d/%02d/%d", month, day, year);
     }
-    //    Date picker
+
     private String getDate() {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);

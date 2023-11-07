@@ -53,10 +53,10 @@ public class AddObservationActivity extends AppCompatActivity {
     }
 
     private void setInit(){
-        back_ic = findViewById(R.id.back_ic_obs);
+        back_ic = findViewById(R.id.back_icon_button);
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.add_item);
-        title_action = findViewById(R.id.title_observation);
+        title_action = findViewById(R.id.observation_title);
         title_action.setText("Add Observation");
         save_obs = findViewById(R.id.save_obs);
         name_obs = findViewById(R.id.name_obs);

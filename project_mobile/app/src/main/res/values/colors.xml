@@ -9,4 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="input_background">#E4E3E3</color>
+    <color name='polo_blue'>#8FA2CA</color>
+    <color name='alice_blue'>#EDF2F7</color>
+    <color name="lavender_mist">#E4E8F4</color>
 </resources>

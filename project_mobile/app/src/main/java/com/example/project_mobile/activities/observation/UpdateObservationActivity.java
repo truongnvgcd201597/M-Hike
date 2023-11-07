@@ -66,8 +66,8 @@ public class UpdateObservationActivity extends AppCompatActivity {
     }
 
     private void setInit(){
-        back_ic = findViewById(R.id.back_ic_obs);
-        title_actionbar = findViewById(R.id.title_observation);
+        back_ic = findViewById(R.id.back_icon_button);
+        title_actionbar = findViewById(R.id.observation_title);
         title_actionbar.setText("Update Observation");
         name_obs = findViewById(R.id.name_obs_update);
         comments_obs = findViewById(R.id.comments_obs_update);

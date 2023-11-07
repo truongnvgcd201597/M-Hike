@@ -170,8 +170,8 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
             super(itemView);
             name_obs_txt = itemView.findViewById(R.id.name_obs_row);
             date_obs_txt = itemView.findViewById(R.id.date_obs_row);
-            img_edit = itemView.findViewById(R.id.image_edit_obs);
-            img_remove = itemView.findViewById(R.id.image_remove_obs);
+            img_edit = itemView.findViewById(R.id.edit_obs_icon);
+            img_remove = itemView.findViewById(R.id.remove_obs_icon);
             alertDialog = new AlertDialog.Builder(context);
 
             mainLayout = itemView.findViewById(R.id.mainLayout);

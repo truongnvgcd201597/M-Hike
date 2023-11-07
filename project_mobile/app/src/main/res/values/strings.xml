@@ -16,12 +16,11 @@
     <string name='add_observation'>Add Observation</string>
     <string name='back_content'>Back</string>
 
-    <!--    spinner-->
     <string-array name="level_hike">
-        <item>Easy hike</item>
-        <item>Intermediate hike</item>
-        <item>Challenging hike</item>
-        <item>Difficult hike</item>
-        <item>Very difficult hike</item>
+        <item>Easiest</item>
+        <item>Moderate</item>
+        <item>Moderately Strenuous</item>
+        <item>Strenuous</item>
+        <item>Very Strenuous</item>
     </string-array>
 </resources>

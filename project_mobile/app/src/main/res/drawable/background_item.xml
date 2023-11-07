@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Set màu nền-->
-    <solid android:color="@color/teal_700">
+    <solid android:color="@color/lavender_mist">
     </solid>
-
-    <!-- đặt thuộc tính màu và độ rộng của đường viền -->
-    <stroke
-        android:width="2dp"
-        android:color="@color/black" >
-    </stroke>
 
     <!-- các thuộc tính căn chỉnh-->
     <padding

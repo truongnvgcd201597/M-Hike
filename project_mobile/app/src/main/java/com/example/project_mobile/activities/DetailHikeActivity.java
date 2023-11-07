@@ -46,7 +46,7 @@ public class DetailHikeActivity extends AppCompatActivity {
     }
 
     private void setInit(){
-        back_ic = findViewById(R.id.back_icon);
+        back_ic = findViewById(R.id.back_icon_button);
         back_txt = findViewById(R.id.back_txt);
         see_observation = findViewById(R.id.see_all_observation);
         name_hike_detail = findViewById(R.id.name_hike_detail);

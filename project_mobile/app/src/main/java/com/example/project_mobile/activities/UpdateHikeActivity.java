@@ -105,7 +105,7 @@ public class UpdateHikeActivity extends AppCompatActivity {
         radio_no = findViewById(R.id.radio_no);
         spinner_level = findViewById(R.id.spinner_level_hike);
         alertDialog = new AlertDialog.Builder(this);
-        back_ic = findViewById(R.id.back_icon);
+        back_ic = findViewById(R.id.back_icon_button);
         back_txt = findViewById(R.id.back_txt);
     }
 

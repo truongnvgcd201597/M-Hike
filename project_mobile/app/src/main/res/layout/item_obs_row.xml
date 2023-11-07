@@ -23,8 +23,8 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/crete_round"
-                android:text="My hike"
-                android:textColor="@color/text_color"
+                android:text="Items"
+                android:textColor="@color/polo_blue"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,11 +36,12 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="16dp"
                 android:text="13:20 - 20/10/2021"
+                android:textColor="@color/polo_blue"
                 app:layout_constraintStart_toEndOf="@+id/name_obs_row"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_remove_obs"
+                android:id="@+id/remove_obs_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="5dp"
@@ -50,14 +51,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_edit_obs"
+                android:id="@+id/edit_obs_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="10dp"
                 android:padding="5dp"
                 android:src="@drawable/baseline_edit_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/image_remove_obs"
+                app:layout_constraintEnd_toStartOf="@+id/remove_obs_icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

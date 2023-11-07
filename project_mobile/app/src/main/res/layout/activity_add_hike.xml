@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/alice_blue"
     tools:context=".activities.AddHikeActivity">
 
     <TextView
@@ -12,11 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
         android:text="@string/title_add_hike"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
+        android:textAlignment="center"
         android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,8 +30,7 @@
         android:layout_marginEnd="30dp"
         android:text="@string/name_hike"
         android:textSize="17sp"
-        android:fontFamily="@font/crete_round"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,10 +43,10 @@
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:fontFamily="@font/crete_round"
         android:hint="Name of hike..."
         android:background="@drawable/background_input"
         app:layout_constraintTop_toBottomOf="@+id/title_name_hike" />
@@ -59,9 +58,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
         android:text="@string/location_hike"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -75,8 +73,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/crete_round"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:hint="Hike location..."
@@ -90,9 +88,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:text="@string/datetime_hike"
-        android:fontFamily="@font/crete_round"
         android:textSize="17sp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,14 +103,13 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
-        android:fontFamily="@font/crete_round"
         android:layout_marginEnd="30dp"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:hint="Date and Time..."
-        android:background="@drawable/background_input"
+        android:background="@color/polo_blue"
         app:layout_constraintTop_toBottomOf="@+id/title_date_hike" />
 
     <TextView
@@ -124,7 +120,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/crete_round"
         android:text="@string/parking_available"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
@@ -143,7 +139,7 @@
             android:id="@+id/radio_yes"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:fontFamily="@font/crete_round"
+            android:textColor="@color/polo_blue"
             android:text="Yes"
             android:textSize="17sp" />
 
@@ -151,7 +147,8 @@
             android:id="@+id/radio_no"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:fontFamily="@font/crete_round"
+            android:textColor="@color/polo_blue"
+
             android:text="No"
             android:textSize="17sp" />
     </RadioGroup>
@@ -162,9 +159,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/crete_round"
         android:text="@string/length_hike"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parking_available" />
@@ -180,7 +176,7 @@
         android:hint="Length hike..."
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -190,9 +186,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="25dp"
-        android:fontFamily="@font/crete_round"
         android:text="@string/level_hike"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/length_hike_title" />
@@ -216,9 +211,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/crete_round"
         android:text="@string/description_hike"
-        android:textColor="@color/text_color"
+        android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_level_hike" />
@@ -227,14 +221,13 @@
         android:id="@+id/des_hike"
         android:inputType="text"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/crete_round"
+        android:textColor="@color/white"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:background="@drawable/background_input"
+        android:background="@color/polo_blue"
         app:layout_constraintTop_toBottomOf="@+id/title_des" />
 
     <Button
@@ -245,7 +238,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:text="Save"
-        android:fontFamily="@font/crete_round"
         android:textColor="@color/white"
         android:background="@drawable/background_input"
         app:layout_constraintEnd_toEndOf="parent"
@@ -258,8 +250,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        app:itemBackground="@color/white"
+        android:textColor="@color/polo_blue"
+        app:itemBackground="@color/polo_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/my_menu"
