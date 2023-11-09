@@ -14,7 +14,7 @@ import com.example.project_mobile.models.Observation;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
     private Context context;
-    private static final String DATABASE_NAME = "Coursework.db";
+    private static final String DATABASE_NAME = "MHikeDB.db";
     private static final String TABLE_HIKE = "hikes";
     private static final String TABLE_OBSERVATION = "observations";
     public MyDatabaseHelper(@Nullable Context context) {
@@ -46,30 +46,30 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addNewHike(Hike hike){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("Hike_Name", hike.getHikeName());
-        cv.put("hike_location", hike.getLocationHike());
-        cv.put("date_hike",hike.getDateHike());
-        cv.put("parking_available",hike.getParkingAvailable());
-        cv.put("hike_length",hike.getHikeLength());
-        cv.put("hike_level",hike.getHikeLevel());
-        cv.put("hike_description",hike.getHikeDescription());
-        long result = db.insert(TABLE_HIKE,null,cv);
-        if(result == -1){
-            Toast.makeText(context, "Failed to Add", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Successfully to Add", Toast.LENGTH_SHORT).show();
+        public void addNewHike(Hike hike){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues cv = new ContentValues(); // {K;V}
+            cv.put("Hike_Name", hike.getHikeName());
+            cv.put("hike_location", hike.getLocationHike());
+            cv.put("date_hike",hike.getDateHike());
+            cv.put("parking_available",hike.getParkingAvailable());
+            cv.put("hike_length",hike.getHikeLength());
+            cv.put("hike_level",hike.getHikeLevel());
+            cv.put("hike_description",hike.getHikeDescription());
+            long result = db.insert(TABLE_HIKE,null,cv);
+            if(result == -1){
+                Toast.makeText(context, "Can't add new Hike", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(context, "Completed to add new Hike", Toast.LENGTH_SHORT).show();
+            }
         }
-    }
 
     public Cursor readAllHikes(){
         String query ="SELECT hike_id, Hike_Name, hike_location, date_hike, parking_available, hike_length, hike_level, hike_description FROM "+ TABLE_HIKE;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = null;
         if(db != null){
-            cursor = db.rawQuery(query, null);
+            cursor = db.rawQuery(query, null); // Cursor
         }
         return cursor;
     }

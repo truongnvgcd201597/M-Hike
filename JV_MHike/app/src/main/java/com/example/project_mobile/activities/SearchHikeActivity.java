@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.project_mobile.R;
@@ -58,11 +57,9 @@ public class SearchHikeActivity extends AppCompatActivity {
                     return true;
                 case R.id.add_item:
                     startActivity(new Intent(getApplicationContext(), AddHikeActivity.class));
-                    overridePendingTransition(0, 0);
                     return true;
                 case R.id.home_page:
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    overridePendingTransition(0, 0);
                     return true;
             }
             return false;

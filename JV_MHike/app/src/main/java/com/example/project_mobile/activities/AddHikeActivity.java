@@ -143,11 +143,9 @@ public class AddHikeActivity extends AppCompatActivity {
                         return true;
                     case R.id.home_page:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.search_item:
                         startActivity(new Intent(getApplicationContext(), SearchHikeActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

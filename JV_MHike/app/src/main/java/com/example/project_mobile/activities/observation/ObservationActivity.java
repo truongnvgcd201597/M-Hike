@@ -123,7 +123,6 @@ public class ObservationActivity extends AppCompatActivity {
                         intent1.putExtra("level_hike", level);
                         intent1.putExtra("des_hike", des);
                         startActivity(intent1);
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.search_item:
                         Intent intent2 = new Intent(getApplicationContext(), SearchObservationActivity.class);
@@ -136,7 +135,6 @@ public class ObservationActivity extends AppCompatActivity {
                         intent2.putExtra("level_hike", level);
                         intent2.putExtra("des_hike", des);
                         startActivity(intent2);
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

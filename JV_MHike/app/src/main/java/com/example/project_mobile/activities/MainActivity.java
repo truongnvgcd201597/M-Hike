@@ -88,11 +88,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.add_item:
                     startActivity(new Intent(getApplicationContext(), AddHikeActivity.class));
-                    overridePendingTransition(0, 0);
                     return true;
                 case R.id.search_item:
                     startActivity(new Intent(getApplicationContext(), SearchHikeActivity.class));
-                    overridePendingTransition(0, 0);
                     return true;
             }
             return false;
@@ -100,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showClearDataDialog() {
-        alertDialog.setTitle("Clear all data")
+        alertDialog.setTitle("All data will be deleted")
                 .setMessage("Are you sure you want to delete all items?")
                 .setCancelable(true)
                 .setPositiveButton("Yes", (dialogInterface, i) -> clearAllData())

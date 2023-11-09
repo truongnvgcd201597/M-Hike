@@ -34,7 +34,7 @@ public class ObservationDetailActivity extends AppCompatActivity {
     private void setInit(){
         back_ic = findViewById(R.id.back_icon_button);
         title_txt = findViewById(R.id.observation_title);
-        title_txt.setText("Detail Observation");
+        title_txt.setText("Observation Detail");
         name_obs = findViewById(R.id.name_obs_detail);
         time_obs = findViewById(R.id.time_obs_detail);
         comments_obs = findViewById(R.id.comments_obs_detail);
