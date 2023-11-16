@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,21 +11,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.project_mobile.R;
-import com.example.project_mobile.activities.AddHikeActivity;
-import com.example.project_mobile.activities.MainActivity;
 import com.example.project_mobile.database.MyDatabaseHelper;
-import com.example.project_mobile.models.Hike;
 import com.example.project_mobile.models.Observation;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -144,7 +136,7 @@ public class AddObservationActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.search_item:
-                        Intent intent2 = new Intent(getApplicationContext(), SearchObservationActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), ObservationSearchActivity.class);
                         intent2.putExtra("hike_id", hikeID);
                         intent2.putExtra("hike_date", date_hike);
                         intent2.putExtra("hike_name", name);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.observation.UpdateObservationActivity">
+    tools:context=".activities.observation.ObservationUpdateActivity">
     <include
         android:id="@+id/include2"
         layout="@layout/actionbar_observation" />
@@ -16,7 +16,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="Observation"
         android:textColor="@color/text_color"
         android:textSize="17sp"

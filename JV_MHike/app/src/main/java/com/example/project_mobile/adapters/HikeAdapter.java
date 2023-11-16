@@ -32,15 +32,16 @@ import java.util.List;
 public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> implements Filterable {
     private Context context;
     private Activity activity;
-    private List<Hike> hikes;
-    private List<Hike> hikesFind;
+    private List<Hike> hikeList;
+    private List<Hike> hikeListFiltered;
 
-    public HikeAdapter(Activity activity, Context context, List<Hike> hikes){
+    public HikeAdapter(Activity activity, Context context, List<Hike> hikes) {
         this.activity = activity;
         this.context = context;
-        this.hikes = hikes;
-        this.hikesFind = hikes;
+        this.hikeList = hikes;
+        this.hikeListFiltered = hikes;
     }
+
     @NonNull
     @Override
     public HikeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,11 +52,11 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull HikeAdapter.MyViewHolder holder, int position) {
-        Hike hike = hikes.get(position);
-        holder.name_hike_txt.setText(String.valueOf(hike.getHikeName()));
-        holder.date_hike_txt.setText(String.valueOf(hike.getDateHike()));
+        Hike hike = hikeList.get(position);
+        holder.nameHikeTxt.setText(String.valueOf(hike.getHikeName()));
+        holder.dateHikeTxt.setText(String.valueOf(hike.getDateHike()));
 
-        holder.img_edit.setOnClickListener(v -> {
+        holder.imgEdit.setOnClickListener(v -> {
             Intent intent = new Intent(context, UpdateHikeActivity.class);
             intent.putExtra("hike_id", String.valueOf(hike.getHikeId()));
             intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
@@ -65,17 +66,17 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
             intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
             intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
             intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
-            activity.startActivityForResult(intent,1);
+            activity.startActivityForResult(intent, 1);
         });
-        holder.img_remove.setOnClickListener(v -> {
+        holder.imgRemove.setOnClickListener(v -> {
             holder.alertDialog.setTitle("Delete " + String.valueOf(hike.getHikeName()))
-                    .setMessage("Are you sure you want to delete item "+ String.valueOf(hike.getHikeName()))
+                    .setMessage("Are you sure you want to delete item " + String.valueOf(hike.getHikeName()))
                     .setCancelable(true)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             deleteHike((int) hike.getHikeId());
-                            activity.startActivityForResult(new Intent(context, MainActivity.class),1);
+                            activity.startActivityForResult(new Intent(context, MainActivity.class), 1);
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
@@ -95,17 +96,18 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
             intent.putExtra("length_hike", String.valueOf(hike.getHikeLength()));
             intent.putExtra("level_hike", String.valueOf(hike.getHikeLevel()));
             intent.putExtra("des_hike", String.valueOf(hike.getHikeDescription()));
-            activity.startActivityForResult(intent,1);
+            activity.startActivityForResult(intent, 1);
         });
     }
-    private void deleteHike(int hike_id){
-        MyDatabaseHelper myBD = new MyDatabaseHelper(context);
-        myBD.deleteOneRow(String.valueOf(hike_id));
+
+    private void deleteHike(int hikeId) {
+        MyDatabaseHelper myDB = new MyDatabaseHelper(context);
+        myDB.deleteOneRow(String.valueOf(hikeId));
     }
 
     @Override
     public int getItemCount() {
-        return hikes.size();
+        return hikeList.size();
     }
 
     @Override
@@ -114,41 +116,42 @@ public class HikeAdapter extends RecyclerView.Adapter<HikeAdapter.MyViewHolder> 
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 String strSearch = constraint.toString();
-                if(strSearch.isEmpty()){
-                    hikes = hikesFind;
-                }else {
-                    List<Hike> list = new ArrayList<>();
-                    for(Hike hike:hikesFind){
-                        if(hike.getHikeName().toLowerCase().contains(strSearch.toLowerCase())){
-                            list.add(hike);
+                if (strSearch.isEmpty()) {
+                    hikeList = hikeListFiltered;
+                } else {
+                    List<Hike> filteredList = new ArrayList<>();
+                    for (Hike hike : hikeListFiltered) {
+                        if (hike.getHikeName().toLowerCase().contains(strSearch.toLowerCase())) {
+                            filteredList.add(hike);
                         }
                     }
-                    hikes = list;
+                    hikeList = filteredList;
                 }
                 FilterResults filterResults = new FilterResults();
-                filterResults.values = hikes;
+                filterResults.values = hikeList;
                 return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                hikes = (List<Hike>) results.values;
+                hikeList = (List<Hike>) results.values;
                 notifyDataSetChanged();
             }
         };
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView name_hike_txt, date_hike_txt;
-        private ImageView img_edit, img_remove;
+        private TextView nameHikeTxt, dateHikeTxt;
+        private ImageView imgEdit, imgRemove;
         private LinearLayout mainLayout;
         private AlertDialog.Builder alertDialog;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            name_hike_txt = itemView.findViewById(R.id.name_hike_txt);
-            date_hike_txt = itemView.findViewById(R.id.date_hike_text);
-            img_edit = itemView.findViewById(R.id.image_edit);
-            img_remove = itemView.findViewById(R.id.image_remove);
+            nameHikeTxt = itemView.findViewById(R.id.name_hike_txt);
+            dateHikeTxt = itemView.findViewById(R.id.date_hike_text);
+            imgEdit = itemView.findViewById(R.id.image_edit);
+            imgRemove = itemView.findViewById(R.id.image_remove);
             alertDialog = new AlertDialog.Builder(context);
 
             mainLayout = itemView.findViewById(R.id.mainLayout);

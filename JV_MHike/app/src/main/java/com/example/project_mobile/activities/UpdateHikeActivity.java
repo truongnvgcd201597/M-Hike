@@ -97,13 +97,13 @@ public class UpdateHikeActivity extends AppCompatActivity {
         dateButton = findViewById(R.id.datePickerButton);
         name_hike = findViewById(R.id.name_hike_detail);
         location_hike = findViewById(R.id.location_hike);
-        des_hike = findViewById(R.id.des_hike);
+        des_hike = findViewById(R.id.hike_description_field);
         length_hike = findViewById(R.id.length_hike);
         update_hike = findViewById(R.id.update_hike);
         radioGroup = findViewById(R.id.radioGroup);
         radio_yes = findViewById(R.id.radio_yes);
         radio_no = findViewById(R.id.radio_no);
-        spinner_level = findViewById(R.id.spinner_level_hike);
+        spinner_level = findViewById(R.id.hike_spinner_level);
         alertDialog = new AlertDialog.Builder(this);
         back_ic = findViewById(R.id.back_icon_button);
         back_txt = findViewById(R.id.back_txt);
@@ -167,7 +167,7 @@ public class UpdateHikeActivity extends AppCompatActivity {
                 radio_no.setChecked(true);
             }
             length_hike.setText((String) getIntent().getSerializableExtra("length_hike"));
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.level_hike, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.hike_level, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
             adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
             spinner_level.setAdapter(adapter);
             String selection = (String) getIntent().getSerializableExtra("level_hike");

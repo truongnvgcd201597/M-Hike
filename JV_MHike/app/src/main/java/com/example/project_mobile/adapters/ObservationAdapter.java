@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -22,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.project_mobile.R;
 import com.example.project_mobile.activities.observation.ObservationActivity;
 import com.example.project_mobile.activities.observation.ObservationDetailActivity;
-import com.example.project_mobile.activities.observation.UpdateObservationActivity;
+import com.example.project_mobile.activities.observation.ObservationUpdateActivity;
 import com.example.project_mobile.database.MyDatabaseHelper;
 import com.example.project_mobile.models.Hike;
 import com.example.project_mobile.models.Observation;
@@ -60,7 +59,7 @@ public class ObservationAdapter extends RecyclerView.Adapter<ObservationAdapter.
         holder.date_obs_txt.setText(String.valueOf(observation.getObsTime()));
 
         holder.img_edit.setOnClickListener(v -> {
-            Intent intent = new Intent(context, UpdateObservationActivity.class);
+            Intent intent = new Intent(context, ObservationUpdateActivity.class);
             intent.putExtra("hike_name", String.valueOf(hike.getHikeName()));
             intent.putExtra("hike_location", String.valueOf(hike.getLocationHike()));
             intent.putExtra("hike_date", String.valueOf(hike.getDateHike()));

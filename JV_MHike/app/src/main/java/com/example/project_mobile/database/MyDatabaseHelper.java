@@ -137,17 +137,17 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateObservation(Observation observation){
+    public void updateObservation(Observation observation) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("observation_name", observation.getObsName());
         cv.put("date_time", observation.getObsTime());
-        cv.put("comments",observation.getObsComment());
-        long result = db.update(TABLE_OBSERVATION, cv, "hike_id=? and observation_id=?",new String[]{String.valueOf(observation.getHikeId()), String.valueOf(observation.getHikeId())});
-        if(result == -1){
-            Toast.makeText(context, "Failed to Update.", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Successfully to Update", Toast.LENGTH_SHORT).show();
+        cv.put("comments", observation.getObsComment());
+        long result = db.update(TABLE_OBSERVATION, cv, "hike_id=? and observation_id=?", new String[]{String.valueOf(observation.getHikeId()), String.valueOf(observation.getObsId())});
+        if (result == -1) {
+            Toast.makeText(context, "Can't update this observation", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Hooray! Observation updated successfully", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -155,9 +155,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_OBSERVATION, "hike_id=?",new String[]{ob_id});
         if(result == -1){
-            Toast.makeText(context, "Failed to Delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Can't delete this observation", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(context, "Successfully to Delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Horrays, you deleted successfully this observation", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -11,12 +11,12 @@
         layout="@layout/actionbar_observation" />
 
     <TextView
-        android:id="@+id/title_name_obs"
+        android:id="@+id/obs_title_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="Observation"
         android:textColor="@color/text_color"
         android:textSize="17sp"
@@ -24,12 +24,12 @@
         app:layout_constraintTop_toBottomOf="@+id/include3" />
 
     <TextView
-        android:id="@+id/name_obs_detail"
+        android:id="@+id/obs_name_detail"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="oberservation name"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
@@ -42,49 +42,49 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="Time of observation"
         android:textColor="@color/text_color"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_obs_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/obs_name_detail" />
 
     <TextView
-        android:id="@+id/time_obs_detail"
+        android:id="@+id/obs_time_detail"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="time of observation"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_obs_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/obs_name_detail" />
 
     <TextView
-        android:id="@+id/comments_obs"
+        android:id="@+id/obs_comments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="Comments"
         android:textColor="@color/text_color"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_obs_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/obs_time_detail" />
 
     <TextView
-        android:id="@+id/comments_obs_detail"
+        android:id="@+id/obs_comment_detail"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="comments"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_obs_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/obs_time_detail" />
 </androidx.constraintlayout.widget.ConstraintLayout>

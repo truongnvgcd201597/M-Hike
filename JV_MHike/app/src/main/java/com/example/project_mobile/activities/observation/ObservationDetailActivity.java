@@ -35,9 +35,9 @@ public class ObservationDetailActivity extends AppCompatActivity {
         back_ic = findViewById(R.id.back_icon_button);
         title_txt = findViewById(R.id.observation_title);
         title_txt.setText("Observation Detail");
-        name_obs = findViewById(R.id.name_obs_detail);
-        time_obs = findViewById(R.id.time_obs_detail);
-        comments_obs = findViewById(R.id.comments_obs_detail);
+        name_obs = findViewById(R.id.obs_name_detail);
+        time_obs = findViewById(R.id.obs_time_detail);
+        comments_obs = findViewById(R.id.obs_comment_detail);
     }
 
     private void setListeners(){

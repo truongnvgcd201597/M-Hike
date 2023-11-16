@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/title_add_hike"
+        android:text="@string/add_hike_title"
         android:textColor="@color/polo_blue"
         android:textAlignment="center"
         android:textSize="40sp"
@@ -22,13 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title_name_hike"
+        android:id="@+id/hike_name_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/name_hike"
+        android:text="@string/hike_name"
         android:textSize="17sp"
         android:textColor="@color/polo_blue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_new_hike_title" />
 
     <EditText
-        android:id="@+id/name_hike_detail"
+        android:id="@+id/hike_name_field"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -49,25 +49,25 @@
         android:paddingEnd="12dp"
         android:hint="Name of hike..."
         android:background="@drawable/background_input"
-        app:layout_constraintTop_toBottomOf="@+id/title_name_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_name_title" />
 
     <TextView
-        android:id="@+id/title_location_hike"
+        android:id="@+id/hike_location_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/location_hike"
+        android:text="@string/hike_location"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_hike_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_name_field" />
 
     <EditText
-        android:id="@+id/location_hike"
+        android:id="@+id/hike_location_field"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -79,9 +79,9 @@
         android:paddingEnd="12dp"
         android:hint="Hike location..."
         android:background="@drawable/background_input"
-        app:layout_constraintTop_toBottomOf="@+id/title_location_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_location_title" />
     <TextView
-        android:id="@+id/title_date_hike"
+        android:id="@+id/hike_date_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_location_field" />
 
     <Button
         android:id="@+id/datePickerButton"
@@ -110,15 +110,15 @@
         android:paddingEnd="12dp"
         android:hint="Date and Time..."
         android:background="@color/polo_blue"
-        app:layout_constraintTop_toBottomOf="@+id/title_date_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_date_title" />
 
     <TextView
-        android:id="@+id/parking_available"
+        android:id="@+id/hike_parking_available_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:text="@string/parking_available"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton">
 
         <RadioButton
-            android:id="@+id/radio_yes"
+            android:id="@+id/yes_option"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:textColor="@color/polo_blue"
@@ -144,7 +144,7 @@
             android:textSize="17sp" />
 
         <RadioButton
-            android:id="@+id/radio_no"
+            android:id="@+id/no_option"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:textColor="@color/polo_blue"
@@ -159,14 +159,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:text="@string/length_hike"
+        android:text="@string/hike_length"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parking_available" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_parking_available_title" />
 
     <EditText
-        android:id="@+id/length_hike"
+        android:id="@+id/length_hike_field"
         android:inputType="number"
         android:layout_width="200dp"
         android:layout_height="40dp"
@@ -186,14 +186,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="25dp"
-        android:text="@string/level_hike"
+        android:text="@string/hike_level"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/length_hike_title" />
 
     <Spinner
-        android:id="@+id/spinner_level_hike"
+        android:id="@+id/hike_difficulty_spinner"
         android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_marginTop="10dp"
@@ -203,22 +203,22 @@
         android:hint="Select level hike"
         android:textColorHint="@color/input_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/length_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/length_hike_field" />
 
     <TextView
-        android:id="@+id/title_des"
+        android:id="@+id/description_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="@string/description_hike"
+        android:text="@string/hike_description"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_level_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_difficulty_spinner" />
 
     <EditText
-        android:id="@+id/des_hike"
+        android:id="@+id/hike_description_field"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -228,7 +228,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:background="@color/polo_blue"
-        app:layout_constraintTop_toBottomOf="@+id/title_des" />
+        app:layout_constraintTop_toBottomOf="@+id/description_title" />
 
     <Button
         android:id="@+id/save_hike"
@@ -242,7 +242,7 @@
         android:background="@drawable/background_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/des_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_description_field" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -254,7 +254,7 @@
         app:itemBackground="@color/polo_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/my_menu"
+        app:menu="@menu/navbar_menu"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

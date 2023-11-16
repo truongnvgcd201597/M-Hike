@@ -22,7 +22,7 @@
                 android:id="@+id/name_obs_row"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/crete_round"
+                android:fontFamily="@font/create_round"
                 android:text="Items"
                 android:textColor="@color/polo_blue"
                 android:textSize="30sp"

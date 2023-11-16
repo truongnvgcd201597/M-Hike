@@ -54,14 +54,14 @@ public class AddHikeActivity extends AppCompatActivity {
 
     private void setInit(){
         save_hike = findViewById(R.id.save_hike);
-        name_hike = findViewById(R.id.name_hike_detail);
-        location_hike = findViewById(R.id.location_hike);
-        des_hike = findViewById(R.id.des_hike);
-        length_hike = findViewById(R.id.length_hike);
+        name_hike = findViewById(R.id.hike_name_field);
+        location_hike = findViewById(R.id.hike_location_field);
+        des_hike = findViewById(R.id.hike_description_field);
+        length_hike = findViewById(R.id.length_hike_field);
 
         radioGroup = findViewById(R.id.radioGroup);
-        radio_yes = findViewById(R.id.radio_yes);
-        radio_no = findViewById(R.id.radio_no);
+        radio_yes = findViewById(R.id.yes_option);
+        radio_no = findViewById(R.id.no_option);
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.add_item);
@@ -70,8 +70,8 @@ public class AddHikeActivity extends AppCompatActivity {
 
         alertDialog = new AlertDialog.Builder(this);
 
-        spinner_level = findViewById(R.id.spinner_level_hike);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.level_hike, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        spinner_level = findViewById(R.id.hike_difficulty_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.hike_level, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         spinner_level.setAdapter(adapter);
     }

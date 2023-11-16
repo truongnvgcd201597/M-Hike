@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/actionbar_rowback" />
+        layout="@layout/actionbar_backaction" />
 
     <TextView
         android:id="@+id/title_add_hike"
@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/crete_round"
-        android:text="@string/title_update_hike"
+        android:fontFamily="@font/create_round"
+        android:text="@string/update_hike_title"
         android:textColor="@color/polo_blue"
         android:textAlignment="center"
         android:textSize="40sp"
@@ -33,7 +33,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/name_hike"
+        android:text="@string/hike_name"
         android:textSize="17sp"
         android:textColor="@color/polo_blue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:textColor="@color/text_color"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:hint="Name of the hike"
         android:background="@drawable/background_input"
         app:layout_constraintTop_toBottomOf="@+id/title_name_hike" />
@@ -63,7 +63,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/location_hike"
+        android:text="@string/hike_location"
         android:textColor="@color/polo_blue"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,14 +79,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:textColor="@color/text_color"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:hint="Location hike"
         android:background="@drawable/background_input"
         app:layout_constraintTop_toBottomOf="@+id/title_location_hike" />
     <TextView
-        android:id="@+id/title_date_hike"
+        android:id="@+id/hike_date_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -108,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:layout_marginEnd="30dp"
         android:textColorHint="@color/polo_blue"
         android:textColor="@color/polo_blue"
@@ -116,7 +116,7 @@
         android:paddingEnd="12dp"
         android:hint="Date and Time..."
         android:background="@drawable/background_input"
-        app:layout_constraintTop_toBottomOf="@+id/title_date_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_date_title" />
 
     <TextView
         android:id="@+id/parking_available"
@@ -158,13 +158,13 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/length_hike_title"
+        android:id="@+id/hike_length_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/crete_round"
-        android:text="@string/length_hike"
+        android:fontFamily="@font/create_round"
+        android:text="@string/hike_length"
         android:textColor="@color/text_color"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,20 +191,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="25dp"
-        android:fontFamily="@font/crete_round"
-        android:text="@string/level_hike"
+        android:fontFamily="@font/create_round"
+        android:text="@string/hike_level"
         android:textColor="@color/text_color"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/length_hike_title" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_length_title" />
 
     <Spinner
-        android:id="@+id/spinner_level_hike"
+        android:id="@+id/hike_spinner_level"
         android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
-        android:background="@drawable/backgroup_spinner"
+        android:background="@drawable/background_spinner"
         android:hint="Select level hike"
         android:textColor="@color/white"
         android:textColorHint="@color/input_background"
@@ -217,22 +217,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/crete_round"
-        android:text="@string/description_hike"
+        android:fontFamily="@font/create_round"
+        android:text="@string/hike_description"
         android:textColor="@color/text_color"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_level_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_spinner_level" />
 
     <EditText
-        android:id="@+id/des_hike"
+        android:id="@+id/hike_description_field"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:textColor="@color/text_color"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:background="@drawable/background_input"
@@ -246,10 +246,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:text="Update"
-        android:fontFamily="@font/crete_round"
+        android:fontFamily="@font/create_round"
         android:textColor="@color/white"
         android:background="@drawable/background_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/des_hike" />
+        app:layout_constraintTop_toBottomOf="@+id/hike_description_field" />
 </androidx.constraintlayout.widget.ConstraintLayout>

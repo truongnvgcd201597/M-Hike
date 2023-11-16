@@ -26,7 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchObservationActivity extends AppCompatActivity {
+public class ObservationSearchActivity extends AppCompatActivity {
     private ImageView back_ic;
     private BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
@@ -42,7 +42,7 @@ public class SearchObservationActivity extends AppCompatActivity {
         setNavigationView();
         hikeID = (String) getIntent().getSerializableExtra("hike_id");
         date_hike = (String) getIntent().getSerializableExtra("hike_date");
-        myDB = new MyDatabaseHelper(SearchObservationActivity.this);
+        myDB = new MyDatabaseHelper(ObservationSearchActivity.this);
         displayObservation(hikeID);
         String name = (String) getIntent().getSerializableExtra("hike_name");
         String location = (String) getIntent().getSerializableExtra("hike_location");
@@ -52,9 +52,9 @@ public class SearchObservationActivity extends AppCompatActivity {
         String level = (String) getIntent().getSerializableExtra("level_hike");
         String des = (String) getIntent().getSerializableExtra("des_hike");
         Hike hike = new Hike(Integer.parseInt(hikeID), name, location, date_hike, parking_available, length, level, des);
-        observationAdapter = new ObservationAdapter(SearchObservationActivity.this,this, observations, hike);
+        observationAdapter = new ObservationAdapter(ObservationSearchActivity.this,this, observations, hike);
         recyclerView.setAdapter(observationAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(SearchObservationActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(ObservationSearchActivity.this));
     }
 
     private void setInit(){
@@ -67,7 +67,7 @@ public class SearchObservationActivity extends AppCompatActivity {
     public void displayObservation(String hikeID){
         Cursor cursor = myDB.readAllObservation(hikeID);
         if(cursor.getCount() == 0){
-            Toast.makeText(SearchObservationActivity.this, "No data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ObservationSearchActivity.this, "No data", Toast.LENGTH_SHORT).show();
         }else {
             while (cursor.moveToNext()){
                 observations.add(new Observation(Integer.parseInt(cursor.getString(0)),

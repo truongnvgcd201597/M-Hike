@@ -3,5 +3,4 @@
     android:shape="rectangle">
     <solid android:color="@color/polo_blue"/>
     <corners android:radius="12dp"/>
-
 </shape>

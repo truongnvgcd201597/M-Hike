@@ -17,7 +17,7 @@ import java.text.ParseException;
 public class DetailHikeActivity extends AppCompatActivity {
     private ImageView back_ic;
     private Button see_observation;
-    private TextView back_txt, name_hike_detail, location_hike_detail, date_hike_detail, parking_available_detail, length_hike_detail, level_hike_detail, des_hike_detail;
+    private TextView back_txt, hike_name_detail, hike_location_detail, hike_date_detail, parking_available_detail, hike_length_detail, hike_level_detail, hike_description_detail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +34,13 @@ public class DetailHikeActivity extends AppCompatActivity {
             String hikeID = (String) getIntent().getSerializableExtra("hike_id");
             Intent intentObservation = new Intent(DetailHikeActivity.this, ObservationActivity.class);
             intentObservation.putExtra("hike_id", hikeID);
-            intentObservation.putExtra("hike_name", name_hike_detail.getText());
-            intentObservation.putExtra("hike_location", location_hike_detail.getText());
-            intentObservation.putExtra("hike_date", date_hike_detail.getText());
+            intentObservation.putExtra("hike_name", hike_name_detail.getText());
+            intentObservation.putExtra("hike_location", hike_location_detail.getText());
+            intentObservation.putExtra("hike_date", hike_date_detail.getText());
             intentObservation.putExtra("parking_available", parking_available_detail.getText());
-            intentObservation.putExtra("length_hike", length_hike_detail.getText());
-            intentObservation.putExtra("level_hike", level_hike_detail.getText());
-            intentObservation.putExtra("des_hike", des_hike_detail.getText());
+            intentObservation.putExtra("length_hike", hike_length_detail.getText());
+            intentObservation.putExtra("level_hike", hike_level_detail.getText());
+            intentObservation.putExtra("des_hike", hike_description_detail.getText());
             startActivity(intentObservation);
         });
     }
@@ -49,13 +49,13 @@ public class DetailHikeActivity extends AppCompatActivity {
         back_ic = findViewById(R.id.back_icon_button);
         back_txt = findViewById(R.id.back_txt);
         see_observation = findViewById(R.id.see_all_observation);
-        name_hike_detail = findViewById(R.id.name_hike_detail);
-        location_hike_detail = findViewById(R.id.location_hike_detail);
-        date_hike_detail = findViewById(R.id.date_hike_detail);
+        hike_name_detail = findViewById(R.id.hike_name_detail);
+        hike_location_detail = findViewById(R.id.hike_location_detail);
+        hike_date_detail = findViewById(R.id.hike_date_detail);
         parking_available_detail = findViewById(R.id.parking_available_detail);
-        length_hike_detail = findViewById(R.id.length_hike_detail);
-        level_hike_detail = findViewById(R.id.level_hike_detail);
-        des_hike_detail = findViewById(R.id.des_hike_detail);
+        hike_length_detail = findViewById(R.id.hike_length_detail);
+        hike_level_detail = findViewById(R.id.hike_level_detail);
+        hike_description_detail = findViewById(R.id.hike_description_detail);
     }
 
     private void setListener() {
@@ -75,13 +75,13 @@ public class DetailHikeActivity extends AppCompatActivity {
                 getIntent().hasExtra("length_hike")&&
                 getIntent().hasExtra("level_hike")&&
                 getIntent().hasExtra("des_hike")){
-            name_hike_detail.setText((String) getIntent().getSerializableExtra("hike_name"));
-            location_hike_detail.setText((String) getIntent().getSerializableExtra("hike_location"));
-            date_hike_detail.setText((String) getIntent().getSerializableExtra("hike_date"));
+            hike_name_detail.setText((String) getIntent().getSerializableExtra("hike_name"));
+            hike_location_detail.setText((String) getIntent().getSerializableExtra("hike_location"));
+            hike_date_detail.setText((String) getIntent().getSerializableExtra("hike_date"));
             parking_available_detail.setText((String) getIntent().getSerializableExtra("parking_available"));
-            length_hike_detail.setText((String) getIntent().getSerializableExtra("length_hike"));
-            level_hike_detail.setText((String) getIntent().getSerializableExtra("level_hike"));
-            des_hike_detail.setText((String) getIntent().getSerializableExtra("des_hike"));
+            hike_length_detail.setText((String) getIntent().getSerializableExtra("length_hike"));
+            hike_level_detail.setText((String) getIntent().getSerializableExtra("level_hike"));
+            hike_description_detail.setText((String) getIntent().getSerializableExtra("des_hike"));
         }
     }
 }

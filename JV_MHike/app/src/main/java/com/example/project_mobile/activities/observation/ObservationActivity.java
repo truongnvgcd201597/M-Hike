@@ -125,7 +125,7 @@ public class ObservationActivity extends AppCompatActivity {
                         startActivity(intent1);
                         return true;
                     case R.id.search_item:
-                        Intent intent2 = new Intent(getApplicationContext(), SearchObservationActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), ObservationSearchActivity.class);
                         intent2.putExtra("hike_id", hikeID);
                         intent2.putExtra("hike_date", date_hike);
                         intent2.putExtra("hike_name", name);
